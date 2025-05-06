@@ -30,15 +30,24 @@ export default function Game() {
     }
     return (
       <li key={move}>
-        <button onClick={() => jumpTo(move)}>{description}</button>
+        <button
+          className="border border-gray-400 m-1 p-2 cursor-pointer"
+          onClick={() => jumpTo(move)}
+        >
+          {description}
+        </button>
       </li>
     );
   });
 
   return (
-    <>
-      <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
-      <History moves={moves} />
-    </>
+    <div className="min-h-screen flex justify-center items-center ">
+      <div>
+        <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
+      </div>
+      <div>
+        <History moves={moves} />
+      </div>
+    </div>
   );
 }
