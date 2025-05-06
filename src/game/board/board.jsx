@@ -7,9 +7,11 @@ export default function Board() {
 
   const handleClick = (i) => {
     const newSquares = squares.slice();
+
     if (squares[i]) {
       return;
     }
+
     if (xIsNext) {
       newSquares[i] = "X";
     } else {
